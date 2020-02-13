@@ -3,6 +3,7 @@
 - Html page presenting results of differents tools of NLP
 # visualisation
 - index.html
+- Or view here for the published site : http://www.tal.univ-paris3.fr/plurital/travaux-2018-2019/ppe-s2/5/Site_Final/index.html
 # BOA
 - BOA1 : Information extraction of journal Le Monde with perl, bag of words
 - BOA2 : Tagger tree-tagger and Talismane
