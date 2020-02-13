@@ -1,0 +1,394 @@
+<!DOCTYPE HTML>
+<!--
+	Site Final pour le cours de Projet Encadré 2 de S2 M1 TAL
+	Auteur: Lara Dunuan et Siyu WANG
+-->
+<html>
+	<head>
+		<title>Projet Encadré</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><a href="http://www.tal.univ-paris3.fr/plurital/"><img src="images/plurital.png" alt="" /></a></span>
+							<h1 id="title">Projet Encadré 2</h1>
+							<p>Lara DUNUAN</p>
+							<p>Siyu WANG</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon fa-home">Accueil</span></a></li>
+								<li><a href="#projet" id="projet-link"><span class="icon fa-university">Projet</span></a></li>
+								<li><a href="#bao1" id="bao1-link"><span class="icon fa-inbox">Bao1</span></a></li>
+								<li><a href="#bao2" id="bao2-link"><span class="icon fa-inbox">Bao2</span></a></li>
+								<li><a href="#bao3" id="bao3-link"><span class="icon fa-inbox">Bao3</span></a></li>
+								<li><a href="#bao4" id="bao4-link"><span class="icon fa-inbox">Bao4</span></a></li>
+								<li><a href="#conclusion" id="conclusion-link"><span class="icon fa-pencil">Conclusion</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon fa-user">À propos</span></a></li>
+								
+							</ul>
+						</nav>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Accueil -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Projet Encadré M1 TAL Semestre 2</h2>
+								<p>Ce site a été créé pour présenter le projet du cours Programmation et Projet Encadré 2 en Master 
+								TAL Traitement Automatique des Langues (formation collaborée entre l'INALCO, 
+								l’université Paris 10 Nanterre et l’université Sorbonne Nouvelle Paris 3).</p>
+								<p>Merci à Serge FLEURY et Jean-Michel DAUBE qui nous ont encadré tout au long de ce semestre.</p>
+							</header>
+
+							<footer>
+								<a href="#projet" class="button scrolly">Voir le projet!</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Projet -->
+					<section id="projet" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Projet</h2>
+							</header>
+
+							<p>Mise en oeuvre d'une chaîne de traitement textuel semi-automatique, depuis la récupération des données jusqu'à leur présentation. 
+							Ce projet posera d'abord la question des objectifs linguistiques à atteindre et fera appel aux méthodes et outils informatiques 
+							nécessaires à leur réalisation (récupération de corpus, normalisation des textes, 
+							segmentation, étiquetage, extraction, structuration et présentation des résultats...). 
+							<p>Nous traitons ici une arborescence de fils RSS du journal Le Monde, recueillis tous les jours de l'année 2018 à 19h.
+							L'arborescence contient un répertoire pour chaque mois de l'année, dans lesquels se trouvent autant de dossiers que de jours. 
+							Au sein de ces répertoires de jour, on trouve les fichiers qui nous intéressent : les flux RSS de chaque rubrique, 
+							au format .xml. Les différentes rubriques sont celles du Monde (à la une, international, 
+							culture etc.) et ont chacune un identifiant, ce qui permet d'identifier aisément les différents fichiers de flux RSS.
+							<p class="image"><img src="./images/arborescence.png" alt="arborescence" height="400px"/></p>
+							</p>
+							Ici nous avons choisi les rubriques À la Une (3208), International (3210) et France (3224), et nous présentons 4 boîtes à outils:</p>
+							<p class="image"><img src="./images/projgraph.png" alt="arborescence" height="200px"/></p>
+
+							<div class="row">
+								
+							</div>
+
+						</div>
+					</section>
+					
+				<!-- Bao1 -->
+					<section id="bao1" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Bao1</h2>
+							</header>
+
+							<p>Extraire les contenus textuels des fils RSS de l'arborescence : les contenus des balises title et description.</p>
+							<p>Deux méthodes différentes pour traiter des données textuelles :</p>
+							<p>- 1.	La première considère le texte comme un "sacs de caractères" dans lequel on va essayer de repérer certaines régularités (via les regexep)</p>
+							<p><span class="icon fa-cog"></span> Le script Perl+RegExp : <a class="emphasis" href="./BAO1/01_Load-BAO1-regexp.pl">Cliquez ici pour télécharger le script</a></p>
+							<p>La partie d'extraction par l'expression régulière</p>
+							<p class="image"><img src="./BAO1/bao1-rex.png" alt="bao1_script_reg" height="500px"/></p>
+							<p>Voici un aperçu des fichiers d'output txt et xml:</p>
+							<p class="image"><img src="./BAO1/bao1.png" alt="bao1_xml" height="300px"/></p>
+							<p class="image"><img src="./BAO1/bao1_2.png" alt="bao1_txt" height="250px"/></p>
+							<p><span class="icon fa-file-code-o"></span> Les fichers d'output de Perl+RegExp : 
+								<a href="./BAO1/sortie-3208-regexp.txt">Fichier de sortie txt 3208</a>, 
+								<a href="./BAO1/sortie-3208-regexp.xml">Fichier de sortie xml 3208</a>, 
+								<a href="./BAO1/sortie-3210-regexp.txt">Fichier de sortie txt 3210</a>, 
+								<a href="./BAO1/sortie-3210-regexp.xml">Fichier de sortie xml 3210</a>, 
+								<a href="./BAO1/sortie-3224-regexp.txt">Fichier de sortie txt 3224</a>, 
+								<a href="./BAO1/sortie-3224-regexp.xml">Fichier de sortie xml 3224</a>
+							</p>
+							<p>- 2.	La seconde prend en considération la structuration logique du texte (un arbre) et sa modélisation dans un programme 
+								pour au final n'avoir qu'à "cueillir" les feuilles textuelles visées ! (<a href="https://metacpan.org/pod/XML::RSS">https://metacpan.org/pod/XML::RSS</a>)</p>
+							<p><span class="icon fa-cog"></span> Le script Perl+XML::RSS : <a href="./BAO1/01_Load-BAO1-xml-rss.pl">Cliquez ici pour télécharger le script</a></p>
+							<p>La partie d'extraction par XML::RSS</p>
+							<p class="image"><img src="./BAO1/bao1-rss.png" alt="bao1_script_rss" height="600px"/></p>
+							<p><span class="icon fa-file-code-o"></span> Les fichers d'output de Perl+XML::RSS : 
+								<a href="./BAO1/sortie-3208-xmlrss.txt">Fichier de sortie txt 3208</a>, 
+								<a href="./BAO1/sortie-3208-xmlrss.xml">Fichier de sortie xml 3208</a>, 
+								<a href="./BAO1/sortie-3210-xmlrss.txt">Fichier de sortie txt 3210</a>, 
+								<a href="./BAO1/sortie-3210-xmlrss.xml">Fichier de sortie xml 3210</a>, 
+								<a href="./BAO1/sortie-3224-xmlrss.txt">Fichier de sortie txt 3224</a>, 
+								<a href="./BAO1/sortie-3224-xmlrss.xml">Fichier de sortie xml 3224</a>
+							</p>
+
+							<div class="row">
+								
+							</div>
+
+						</div>
+					</section>
+					
+				<!-- Bao2 -->
+					<section id="bao2" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Bao2</h2>
+							</header>
+
+							<p>Étiquetage. Une fois les données textuelles obtenues, 
+								il faut les étiquetter (forme, POS, lemme) pour pouvoir les traiter de manière syntaxique.
+								Nous avons utilisé 2 méthodes d'étiquetage : TreeTagger et Talismane.
+							</p>
+							<p>L'utilisation de TreeTagger et de Talismane a été incorporée dans les scripts d'extraction. 
+								Une procédure d'étiquetage (pour chaque outil) a été rajoutée. Les scripts donnent maintenant en sortie un fichier texte 
+								et un fichier XML avec les textes étiquetés. 
+								L'étiquetage intervient après le nettoyage et fait intervenir de nombreux fichiers intermédiaires 
+								(des fichers temps).</p>
+							<p>- 1. TreeTagger: <li> Site: <a href="http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/">http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/</a></li>
+								<li> Documentation: <a href="http://www.tal.univ-paris3.fr/cours/BAO-master/treetagger-win32/presentation-treetagger.htm">http://www.tal.univ-paris3.fr/cours/BAO-master/treetagger-win32/presentation-treetagger.htm</a></li>
+								<li> Fichier de langue: <a href="./BAO2/french-utf8.par">french-utf8</a></li>
+								<li> Programme intégrés: <a href="./BAO2/treetagger2xml-utf8.pl">treetagger2xml-utf8</a>, <a href="./BAO2/tokenise-utf8.pl">tokenise-utf8</a></li>
+								<li> Script : <a href="./BAO2/02_Load-BAO2-regexp.pl">Bao2-regexp</a>, <a href="./BAO2/02_Load-BAO2-xml-rss.pl">Bao2-xml-rss</a></li>
+							</p>
+							<p>Voici un aperçu du fichier d'output de tree-tagger: (les fichiers sont téléchargeables en dessous)</p>
+							<p class="image"><img src="./BAO2/bao2-tt.png" alt="bao2_tt" height="500px"/></p>
+							<p>- 2. Talismane: <li> Site github: <a href="https://github.com/joliciel-informatique/talismane">https://github.com/joliciel-informatique/talismane</a></li>
+								<li> Documentation: <a href="http://joliciel-informatique.github.io/talismane/">http://joliciel-informatique.github.io/talismane/</a></li>
+								<li> Programme intégrés: <a href="./BAO2/talismane2xml-v2_1604.pl">talismane2xml-v2</a></li>
+								<li> Script : Les mêmes scripts comme précédent.</li>
+							</p>
+							<p>Voici un aperçu du fichier d'output de talismane et le fichier converti en xml:</p>
+							<p class="image"><img src="./BAO2/bao2-talis-sortie.png" alt="bao2_talis-sortie" height="400px"/></p>
+							<p class="image"><img src="./BAO2/bao2_talis.png" alt="bao2_talis-xml" height="500px"/></p>
+							<p>
+								<span class="icon fa-file-code-o"></span> - Les fichiers d'output Bao2 : 
+								<li><a href="./BAO2/sortie-3208-regexp-talisman.txt">Fichier de sortie Talismane txt 3208</a></li>
+								<li><a href="./BAO2/TALISMANE-3208.xml">Fichier de sortie Talismane xml 3208</a></li>
+								<li><a href="./BAO2/sortie-3208-regexp.xml">Fichier de sortie Tree-tagger xml 3208</a></li>
+								<li><a href="./BAO2/sortie-3210-regexp-talisman.txt">Fichier de sortie Talismane txt 3210</a></li>
+								<li><a href="./BAO2/TALISMANE-3210.xml">Fichier de sortie Talismane xml 3210</a></li>
+								<li><a href="./BAO2/sortie-3208-regexp.xml">Fichier de sortie Tree-tagger xml 3210</a></li>
+								<li><a href="./BAO2/sortie-3224-regexp-talisman.txt">Fichier de sortie Talismane txt 3224</a></li>
+								<li><a href="./BAO2/TALISMANE-3224.xml">Fichier de sortie Talismane xml 3224</a></li>
+								<li><a href="./BAO2/sortie-3224-regexp.xml">Fichier de sortie Tree-tagger xml 3224</a></li>
+							</p>
+							<div class="row">
+								
+							</div>
+
+						</div>
+					</section>
+					
+				<!-- Bao3 -->
+					<section id="bao3" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Bao3</h2>
+							</header>
+
+							<p>Extraction de patrons syntaxiques. Grâce à l'étiquetage réalisé à l'étape précédente, 
+								on va pouvoir extraire des schémas pertinents pour trouver la terminologie spécifique à une rubrique. </p>
+							<p>
+								Le choix des patrons à extraire est primordial pour obtenir des termes pertinents. Les noms, 
+								les adjectifs et les verbes seront les termes clés que nous allons observer.
+								Les patrons que nous avons extraits sont NOM PREP NOM PREP, VERBE DET NOM, NOM ADJ, et ADJ NOM.
+							</p>
+							<p>
+								Pour le faire, on peut adopter plusieurs méthodes. Ici nous avons essayé les méthodes de Perl, XSLT/Xpath, et Xquery(avec BaseX).
+							</p>
+
+							<p> - 1. Perl
+							<li><a href="./BAO3/03_Load-BAO3.pl">Script en perl</a></li>
+							<li><a href="./BAO3/patrons.txt">Fichier des patrons</a></li>
+							<p>Voici une comparaison de résultat entre des rubriques du patron ADJ NC:</p>
+							<p class="image"><img src="./BAO3/bao3-perl-an.png" alt="bao3_perl_an" height="400px"/></p>
+							<p>Voici une comparaison de résultat entre des rubriques du patron NC ADJ:</p>
+							<p class="image"><img src="./BAO3/bao3_perl_na.png" alt="bao3_perl_na" height="400px"/></p>
+							<p>Voici une comparaison de résultat entre des rubriques du patron V DET NC:</p>
+							<p class="image"><img src="./BAO3/bao3_perl_vdn.png" alt="bao3_perl_vdn" height="400px"/></p>
+							<p>Voici une comparaison de résultat entre des rubriques du patron NC PREP NC PREP:</p>
+							<p class="image"><img src="./BAO3/bao3-perl-npnp.png" alt="bao3_perl_npnp" height="400px"/></p>
+
+							<li>Fichier d'entrée: <a href="./BAO2/sortie-3208-regexp-talisman.txt">Talismane txt 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3208_extrairepatron.txt">Fichier de sortie des patrons</a></li>						
+							<li>Fichier d'entrée: <a href="./BAO2/sortie-3210-regexp-talisman.txt">Talismane txt 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210_extrairepatron.txt">Fichier de sortie des patrons</a></li>
+							<li>Fichier d'entrée: <a href="./BAO2/sortie-3224-regexp-talisman.txt">Talismane txt 3224</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224_extrairepatron.txt">Fichier de sortie des patrons</a></li>
+							</p>
+
+							<p> - 2. XSLT/Xpath</p>
+							<p>Nous avons construit une feuille de styles XSLT pour extraire des patrons:
+							<li>Fichier xslt : <a href="./BAO3/extrait_patron_xslt.xsl">Feuille de style XSLT</a></li>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3208-regexp.xml">Tree-tagger xml 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3208_xslt.txt">Fichier txt patrons extraits 3208</a></li>
+							<p class="image"><img src="./BAO3/xslt3208.png" alt="bao3_xslt_3208" height="400px"/></p>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3210-regexp.xml">Tree-tagger xml 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210_xslt.txt">Fichier txt patrons extraits 3210</a></li>
+							<p class="image"><img src="./BAO3/xslt3210.png" alt="bao3_xslt_3210" height="400px"/></p>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3224-regexp.xml">Tree-tagger xml 3224</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224_xslt.txt">Fichier txt patrons extraits 3224</a></li>
+							<p class="image"><img src="./BAO3/xslt3224.png" alt="bao3_xslt_3224" height="400px"/></p>
+							</p>
+							<p> - 3. Xquery(BaseX)</p>
+							<p>Nous avons construit une requête xquery par patron, et les avons appliqués sur les 3 rubriques 3208, 3210, et 3224.</p>
+							<p>À noter : nous avons remarqué un problème d'étiquetage du Tree-tagger pour le déterminant "l'", parfois ce token a été taggé comme ADJ. Ainsi les résultat pour les patrons ADJ NOM et NOM ADJ sont compromis.</p>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3208-regexp.xml">Tree-tagger xml 3208</a></li>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3210-regexp.xml">Tree-tagger xml 3210</a></li>
+							<li>Fichier d'entrée: <a href="./BAO3/sortie-3224-regexp.xml">Tree-tagger xml 3224</a></li>
+							<li>Fichier de requête Xquery : <a href="./BAO3/xquery_adj_nom.xq">Extraire Patrons Xquery du patron ADJ NOM</a></li>
+							<p class="image"><img src="./BAO3/an_all.png" alt="bao3_xquery_an_all" height="400px"/></p>
+							<li>Fichier de sortie: <a href="./BAO3/3208-an.txt">Fichier txt patrons ADJ NOM extraits 3208</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3208-an-sort.txt">Fichier txt patrons ADJ NOM triée 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210-an.txt">Fichier txt patrons ADJ NOM extraits 3210</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3210-an-sort.txt">Fichier txt patrons ADJ NOM triée 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224-an.txt">Fichier txt patrons ADJ NOM extraits 3224</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3224-an-sort.txt">Fichier txt patrons ADJ NOM triée 3224</a></li>
+
+							<li>Fichier de requête Xquery : <a href="./BAO3/xquery_nom_adj.xq">Extraire Patrons Xquery du patron NOM ADJ</a></li>
+							<p class="image"><img src="./BAO3/na_all.png" alt="bao3_xquery_na_all" height="400px"/></p>
+							<li>Fichier de sortie: <a href="./BAO3/3208-na.txt">Fichier txt patrons NOM ADJ extraits 3208</a></li>
+							<li>Fichier de sortie triée:<a href="./BAO3/3208-na-sort.txt">Fichier txt patrons NOM ADJ triée 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210-na.txt">Fichier txt patrons NOM ADJ extraits 3210</a></li>
+							<li>Fichier de sortie triée:<a href="./BAO3/3210-na-sort.txt">Fichier txt patrons NOM ADJ triée 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224-na.txt">Fichier txt patrons NOM ADJ extraits 3224</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3224-na-sort.txt">Fichier txt patrons NOM ADJ triée 3224</a></li>
+
+							<li>Fichier de requête Xquery : <a href="./BAO3/xquery_ver_det_nom.xq">Extraire Patrons Xquery du patron VER DET NOM</a></li>
+							<p class="image"><img src="./BAO3/vdn_all.png" alt="bao3_xquery_vdn_all" height="400px"/></p>
+							<li>Fichier de sortie: <a href="./BAO3/3208-vdn.txt">Fichier txt patrons VER DET NOM extraits 3208</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3208-vdn-sort.txt">Fichier txt patrons VER DET NOM triée 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210-vdn.txt">Fichier txt patrons VER DET NOM extraits 3210</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3210-vdn-sort.txt">Fichier txt patrons VER DET NOM triée 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224-vdn.txt">Fichier txt patrons VER DET NOM extraits 3224</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3224-vdn-sort.txt">Fichier txt patrons VER DET NOM triée 3224</a></li>
+
+							<li>Fichier de requête Xquery : <a href="./BAO3/xquery_nom_p_n_p.xq">Extraire Patrons Xquery du patron NOM PREP NOM PREP</a></li>
+							<p class="image"><img src="./BAO3/npnp_all.png" alt="bao3_xquery_npnp_all" height="400px"/></p>
+							<li>Fichier de sortie: <a href="./BAO3/3208-npnp.txt">Fichier txt patrons NOM PREP NOM PREP extraits 3208</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3208-npnp-sort.txt">Fichier txt patrons NOM PREP NOM PREP triée 3208</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3210-npnp.txt">Fichier txt patrons NOM PREP NOM PREP extraits 3210</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3210-npnp-sort.txt">Fichier txt patrons NOM PREP NOM PREP triée 3210</a></li>
+							<li>Fichier de sortie: <a href="./BAO3/3224-npnp.txt">Fichier txt patrons NOM PREP NOM PREP extraits 3224</a></li>
+							<li>Fichier de sortie triée: <a href="./BAO3/3224-npnp-sort.txt">Fichier txt patrons NOM PREP NOM PREP triée 3224</a></li>
+							<div class="row">
+								
+							</div>
+						</div>
+					</section>
+					
+				<!-- Bao4 -->
+					<section id="bao4" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Bao4</h2>
+							</header>
+
+							<p>Représentation graphique. La dernière étape consiste à représenter de manière plus visuelle les résultats obtenus grâce à la boîte à outils 3. 
+								Il faudra de plus choisir un angle d'approche pertinent (car tous les résultats ne pourront pas être représentés).</p>
+							<p>
+								<li><a href="./BAO4/patron-unix.zip">Le programme pour MACOSX</a></li>
+								<li><a href="./BAO4/patron2graphe-2.zip">Le programme pour Windows</a></li>
+							</p>
+							<p>Nous avons choisi des motifs différents pour chaque rubrique, et les avons appliqués sur les outputs des patrons VER DET NOM et NOM PREP NOM PREP (résultats de Bao3)</p>
+							<p>- Pour la rubrique À la Une, nous avons choisi le mot 'éléction' comme le motif:</p>
+							<p>- Output VER DET NOM:</p>
+							<p class="image"><img src="./BAO4/3208vdn-election.png" alt="bao4_election" height="400px"/></p>
+							<p>- Output NOM PREP NOM PREP:</p>
+							<p class="image"><img src="./BAO4/3208npnp-election.png" alt="bao4_election2" height="400px"/></p>
+							<p>- Pour la rubrique International, nous avons choisi le mot 'mouvement' comme le motif:</p>
+							<p>- Output VER DET NOM:</p>
+							<p class="image"><img src="./BAO4/3210-vdn-movement.png" alt="bao4_mouvement" height="400px"/></p>
+							<p>- Output NOM PREP NOM PREP:</p>
+							<p class="image"><img src="./BAO4/3210-npnp-mouvement.png" alt="bao4_mouvement2" height="400px"/></p>
+							<p>- Pour la rubrique France, nous avons choisi le mot 'loi' comme le motif:</p>
+							<p>- Output VER DET NOM:</p>
+							<p class="image"><img src="./BAO4/3224vdn-loi.png" alt="bao4_loi" height="400px"/></p>
+							<p>- Output NOM PREP NOM PREP:</p>
+							<p class="image"><img src="./BAO4/3224npnp-loi.png" alt="bao4_loi2" height="400px"/></p>
+							<div class="row">
+								
+							</div>
+
+						</div>
+					</section>
+					
+
+				<!-- Conclusion -->
+					<section id="conclusion" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Conclusion</h2>
+							</header>
+
+							<p>À travers ce projet, nous avons pu découvrir les façons de la récupération des données 
+								et les outils différents du traitement de texte. Et nous avons remarqué que le Talismane 
+								est un outil plus performant que le Tree-Tagger en ce qui concerne l'étiquetage du français, puisque le "l'" 
+								est souvent maltaggé par Tree-tagger.</p>
+							<p>Comme le programme de Bao2 tourne pendant des heures, nous avons également remarqué que 
+								la partie d'étiquetage Talismane prendra beaucoup moins de temps (6 à 8 min pour une rubrique) si on mettait la concatenation pour
+								talismane dans un seul fichier txt et lancait seulement une fois le Talismane pour l'étiquetage de tout le contenu d'une rubrique.
+							</p>
+							<p>Les résultats triés de Bao3 sont intéressent, comme ce qui est montré dans le patron NOM ADJ des
+								rubriques À la Une 3208 et France 3224, le bigramme le plus courrent est 'gilets jaunes', ce qui montre
+								le poid de ce mouvement aux yeux des journalistes du Monde. D'ailleurs, comme nous avons choisi 3 rubriques assez proches, 
+								il y avait aussi des contenus croisés entre des rubriques.</p>
+
+							
+						</div>
+					</section>
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>À propos</h2>
+							</header>
+
+							<p>Nous sommes deux étudiantes en première année de Master TAL à Inalco.</p>
+							<p>Ce site présente le résultat de notre projet. Vous pouvez parcourir nos scripts, ainsi que les différents résultats réalisés avec des outils variés.</p>
+							<p>Un grand merci à nos professeurs Serge Fleury et Jean-Michel Daube pour tous leurs conseils et leur aide pour le projet.</p>
+							<p>Bonne visite !</p>
+							<p>Siyu WANG et Lara DUNUAN</p>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Lara DUNUAN, Siyu WANG. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
